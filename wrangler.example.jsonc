@@ -1,0 +1,35 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "linked-notes",
+  "main": "src/worker/index.ts",
+  "compatibility_date": "2026-11-16",
+  // "account_id": "<YOUR_CLOUDFLARE_ACCOUNT_ID>",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "linked-notes",
+      "database_id": "<YOUR_D1_DATABASE_ID>",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [{ "binding": "FILES", "bucket_name": "linked-notes-attachments" }],
+  "vars": {
+    "NOW": "",
+    "TEST_CLOCK": "0",
+    // "1" allows new accounts, "0" refuses them (the first owner can still be created if you open this briefly).
+    "ALLOW_SIGNUP": "1",
+    // Comma-separated. Empty = no extra restriction. Example: "you@example.com".
+    "ALLOWED_EMAILS": ""
+  },
+  // Optional custom domain (replace with yours):
+  // "routes": [{ "pattern": "notes.example.com", "custom_domain": true }],
+  // "workers_dev": false,
+  // "preview_urls": false,
+  "observability": { "enabled": true, "traces": { "enabled": true } }
+}

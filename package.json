@@ -1,0 +1,43 @@
+{
+  "name": "linked-notes",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "db:migrate:local": "wrangler d1 migrations apply DB --local",
+    "dev": "npm run build && npm run db:migrate:local && wrangler dev",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "deploy": "npm run build && wrangler deploy",
+    "types": "wrangler types --strict-vars=false"
+  },
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.20.4",
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/lang-markdown": "^6.5.2",
+    "@codemirror/language": "^6.13.1",
+    "@codemirror/search": "^6.7.2",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.15",
+    "@lezer/highlight": "^1.2.5",
+    "d3-force": "^3.0.1",
+    "markdown-it": "^15.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261116.1",
+    "@playwright/test": "^1.65.1",
+    "@types/d3-force": "^3.0.10",
+    "@types/markdown-it": "^14.2.0",
+    "@types/node": "^26.6.6",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "^7.0.2",
+    "vite": "^6.4.6",
+    "vitest": "^3.2.7",
+    "wrangler": "^4.162.0"
+  }
+}

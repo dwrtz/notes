@@ -1,0 +1,11 @@
+# Extends the default rules. The allowlist is a false positive: a keyboard shortcut, not a secret.
+title = "notes"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Command palette keyboard shortcuts (e.g. Ctrl+Shift+Tab), not secrets"
+paths = ['''src/client/app.ts''']
+regexTarget = "line"
+regexes = ['''key: "Ctrl\+Shift\+Tab"''']
