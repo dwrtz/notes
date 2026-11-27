@@ -1,5 +1,7 @@
 # Notes
 
+[![Built from a Spekkr spec](https://img.shields.io/badge/built%20from-Spekkr%20spec-f0442b)](https://spekkr.com/dwrtz/linked-notes/)
+
 Built from the Spekkr spec dwrtz/linked-notes: https://spekkr.com/dwrtz/linked-notes/
 
 Build line: `Build the spec at https://spekkr.com/dwrtz/linked-notes/start.md`
